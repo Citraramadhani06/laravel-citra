@@ -13,8 +13,9 @@ Route::get('about',function(){
 
 Route::get('mahasiswa',function(){
     $nim =  [123,124,125,126];
+    $nama = ['cici','caca','cia','cece'];
     $jumlah = count($nim);
-    return view('mahasiswa', compact('nim', 'jumlah'));
+    return view('mahasiswa', compact('nim', 'jumlah','nama'));
 });
 
 Route::get('profile',function(){

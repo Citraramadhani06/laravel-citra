@@ -49,22 +49,19 @@
               </tr>
             </thead>
             <tbody>
-              <?php $nilai_awal = 1; ?>
-              @while ($nilai_awal <= $jumlah)
+              @for ($i = 0; $i < $jumlah; $i++)
               <tr>
-                <td>0702221045</td>
-                <td>Citra Ramadhani</td>
+                <td>{{ $nim[$i]}}</td>
+                <td>{{ $nama[$i]}}</td>
                 <td>Perempuan</td>
-                <td>06 November 2004</td>
                 <td>Medan</td>
               </tr>
-              <?php $nilai_awal++; ?>
-              @endwhile
+              @endfor
             </tbody>
           </table>
         </div>
       </div>
-      
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
