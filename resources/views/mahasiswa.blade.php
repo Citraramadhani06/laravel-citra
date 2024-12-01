@@ -37,6 +37,48 @@
 
   <div class="container" style="margin-left: 30px">
   <h1>Ini adalah halaman Mahasiswa</h1>
+
+
+
+
+  <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
+    <thead>
+      <tr>
+       <th>NIM</th>
+        <th>Nama Mahasiswa</th>
+        <th>Jenis Kelamin</th>
+        <th colspan="2">TTL</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>0702221045</td>
+    <td>Citra</td>
+    <td>Perempuan</td>
+    <td>06 November 2004</td>
+    <td rowspan="4">Medan</td>
+    </tr>
+    <tr>
+    <td>0702223160</td>
+    <td>Rani A</td>
+    <td>Perempuan</td>
+    <td>13 Januari 2005</td>
+    </tr>
+    <tr>
+    <td>0702223164</td>
+    <td>Asni</td>
+    <td>Perempuan</td>
+    <td>16 Agustus 2003</td>
+    </tr>
+    <tr>
+    <td>0702221042</td>
+    <td>Rani R</td>
+    <td>Perempuan</td>
+    <td>04 Februari 2004</td>
+    </tr>
+    </tbody>
+    </table>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
