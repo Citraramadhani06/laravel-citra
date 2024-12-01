@@ -1,28 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\While_;
 
 Route::get('/', function () {
-    return view('index'); 
+   return view('index');
 });
 
 Route::get('about',function(){
-     return view('about'); 
+    return view('about');
 });
 
 Route::get('mahasiswa',function(){
-     return view('mahasiswa'); 
+    $nim =  [123,124,125,126];
+    $jumlah = count($nim);
+    return view('mahasiswa', compact('nim', 'jumlah'));
 });
 
 Route::get('profile',function(){
     $nama = 'Citra';
-     return view('profile', compact('nama')); 
+    // return view('profile', compact('nama')); 
+    return view('profile')->with('nama', $nama);
 });
 
-
-Route::get('array', function(){
-   for ($i=1; $i <= 5; $i++) {
-     echo 'Hello World' . $i . 'x<br>';
-   }
-     
-});

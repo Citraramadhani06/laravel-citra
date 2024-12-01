@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahasiswa</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -23,7 +24,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/profile">Profile</a>
         </li>
-       <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
       </ul>
@@ -35,52 +36,35 @@
   </div>
 </nav>
 
-  <div class="container" style="margin-left: 30px">
+<div class="container mt-4">
   <h1>Ini adalah halaman Mahasiswa</h1>
-
-
-
 
   <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
     <thead>
       <tr>
        <th>NIM</th>
-        <th>Nama Mahasiswa</th>
-        <th>Jenis Kelamin</th>
-        <th colspan="2">TTL</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>0702221045</td>
-    <td>Citra</td>
-    <td>Perempuan</td>
-    <td>06 November 2004</td>
-    <td rowspan="4">Medan</td>
-    </tr>
-    <tr>
-    <td>0702223160</td>
-    <td>Rani A</td>
-    <td>Perempuan</td>
-    <td>13 Januari 2005</td>
-    </tr>
-    <tr>
-    <td>0702223164</td>
-    <td>Asni</td>
-    <td>Perempuan</td>
-    <td>16 Agustus 2003</td>
-    </tr>
-    <tr>
-    <td>0702221042</td>
-    <td>Rani R</td>
-    <td>Perempuan</td>
-    <td>04 Februari 2004</td>
-    </tr>
-    </tbody>
-    </table>
-
-</div>
-
+                <th>Nama Mahasiswa</th>
+                <th>Jenis Kelamin</th>
+                <th colspan="2">TTL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $nilai_awal = 1; ?>
+              @while ($nilai_awal <= $jumlah)
+              <tr>
+                <td>0702221045</td>
+                <td>Citra Ramadhani</td>
+                <td>Perempuan</td>
+                <td>06 November 2004</td>
+                <td>Medan</td>
+              </tr>
+              <?php $nilai_awal++; ?>
+              @endwhile
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
