@@ -5,4 +5,4 @@ use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\While_;
 
 
-Route::get('/mahasiswa',[mahasiswaController::class,'index']);
+Route::resource('mahasiswa', mahasiswaController::class);
