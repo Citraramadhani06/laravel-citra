@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('nim')->unique();
             $table->string('nama_mahasiswa' ,35)->nullable();
-            $table->enum('jk',['L','p']);
+            $table->enum('jk',['L','P']);
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat');
             $table->timestamps();

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class mahasiswaController extends Controller
 {
@@ -12,7 +15,7 @@ class mahasiswaController extends Controller
     public function index()
     {
         //Halaman Home mahasiswa
-        return view ('mahasiswa/mahasiswa');
+        return view ('mahasiswa.index');
     }
 
     /**
@@ -21,7 +24,7 @@ class mahasiswaController extends Controller
     public function create()
     {
         //Halaman tambah mahasiswa
-        return view('mahasiswa/create');
+        return view('mahasiswa.create');
     }
 
     /**
@@ -30,6 +33,41 @@ class mahasiswaController extends Controller
     public function store(Request $request)
     {
         //Simpan tambah mahasiswa
+
+       Session::flash('nim', $request->nim);
+       Session::flash('nama_mahasiswa', $request->nama_mahasiswa);
+       Session::flash('tgl_lahir', $request->tgl_lahir);
+       Session::flash('alamat', $request->alamat);
+
+
+        $request->validate(
+            [
+            'nim' => 'required|numeric|unique:mahasiswa,nim',
+            'nama_mahasiswa' => 'required',
+            'jk' => 'required',
+            'tgl_lahir' => 'required',
+            'alamat' => 'required'
+        ],
+        [
+            'nim.required' => 'NIM tidak boleh kosong!',
+            'nim.numeric' => 'NIM harus diisi dalam bentuk angka',
+            'nim.unique' => 'NIM sudah ada sebelumnya',
+            'nama_mahasiswa.required' => 'Nama Mahasiswa tidak boleh kosong!',
+            'jk.required' => 'Jenis Kelamin tidak boleh kosong!',
+            'tgl_lahir.required' => 'Tanggal lahir tidak boleh kosong!',
+            'alamat.required' => 'Alamat tidak boleh kosong!',
+        ]
+    );
+
+       $data = [
+            'nim' => $request->nim,
+            'nama_mahasiswa' => $request->nama_mahasiswa,
+            'jk' => $request->jk,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat
+       ];
+       mahasiswa::create($data);
+       return redirect('/mahasiswa')->with('success','Data Berhasil ditambahkan!');
     }
 
     /**
